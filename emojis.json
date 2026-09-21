@@ -1,0 +1,12 @@
+{
+  "static": {
+    "cart": "🛒",
+    "box": "📦",
+    "money": "💵",
+    "add": "➕",
+    "remove": "➖",
+    "confirm": "✔️",
+    "close": "✖️"
+  },
+  "animated": {}
+}
