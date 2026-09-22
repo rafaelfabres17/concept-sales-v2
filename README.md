@@ -31,7 +31,7 @@ Create a folder for the bot
 Open the terminal in that folder and paste the command below
 
 ```bash
-git clone https://github.com/rafaelfabres17/sales-concept.git .
+git clone https://github.com/rafaelfabres17/concept-sales.git .
 ```
 
 Install dependencies
