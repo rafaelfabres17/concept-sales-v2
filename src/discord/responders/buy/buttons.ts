@@ -17,7 +17,7 @@ createResponder({
     const product = products.find((product) => product.id == productId);
 
     if (!product) {
-      await interaction.reply(
+      await interaction.update(
         res.danger("O produto não está mais disponível..."),
       );
       return;
@@ -28,13 +28,13 @@ createResponder({
     const items = grouped.get(product.id) ?? [];
 
     if (items.length == 0) {
-      await interaction.reply(
+      await interaction.update(
         res.warning("Esse produto não possui estoque atualmente."),
       );
       return;
     }
 
-    await interaction.reply(
+    await interaction.update(
       menus.product.cart(
         {
           product,

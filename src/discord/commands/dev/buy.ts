@@ -7,6 +7,8 @@ import {
   ApplicationCommandType,
 } from "discord.js";
 
+const products = getProductData();
+
 createCommand({
   name: "comprar",
   description: "Comprar um Produto",
@@ -16,7 +18,10 @@ createCommand({
       name: "id",
       description: "ID do Produto",
       type: ApplicationCommandOptionType.Integer,
-      minValue: 1,
+      choices: Object.entries(products).map(([_key, data]) => ({
+        name: `${data.name}`,
+        value: data.id,
+      })),
       required,
     },
   ],
@@ -24,7 +29,6 @@ createCommand({
     const { options } = interaction;
     const productId = options.getInteger("id", true);
 
-    const products = getProductData();
     const product = products.find((product) => product.id == productId);
 
     if (!product) {
