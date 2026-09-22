@@ -14,6 +14,7 @@ interface CartData {
     items: number;
   };
   price: number;
+  couponUsed?: boolean;
 }
 
 export function cartMenu<R>(data: CartData, stock: StockItem[]): R {
@@ -42,13 +43,20 @@ export function cartMenu<R>(data: CartData, stock: StockItem[]): R {
   });
 
   const components = wrapButtons(
-    2,
+    3,
     new ButtonBuilder({
       customId: `/cart/item/${delivery.items}/add/${product.id}`,
       style: ButtonStyle.Success,
       label: "Adicionar Item",
       emoji: icon.add,
       disabled: delivery.items >= items.length,
+    }),
+    new ButtonBuilder({
+      customId: `/cart/item/${delivery.items}/coupon/${product.id}`,
+      style: ButtonStyle.Primary,
+      label: "Adicionar Cupom",
+      emoji: icon.tag,
+      disabled: data.couponUsed,
     }),
     new ButtonBuilder({
       customId: `/cart/item/${delivery.items}/remove/${product.id}`,

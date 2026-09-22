@@ -6,7 +6,8 @@
     "add": "➕",
     "remove": "➖",
     "confirm": "✔️",
-    "close": "✖️"
+    "close": "✖️",
+    "tag": "🏷️"
   },
   "animated": {}
 }

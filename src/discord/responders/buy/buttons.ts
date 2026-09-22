@@ -18,7 +18,7 @@ createResponder({
 
     if (!product) {
       await interaction.update(
-        res.danger("O produto não está mais disponível..."),
+        res.warning("O produto não está mais disponível..."),
       );
       return;
     }
